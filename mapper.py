@@ -25,8 +25,12 @@ for line in sys.stdin:
   # S part
   matrixRowS = random.randint(1, height)
   begin_S_ID = (matrixRowS * (matrixRowS -1)) + 1
+  # ERROR HERE
   end_S_ID = (matrixRowS * (matrixRowS)) + 1
-  rowSIDS = range(begin_S_ID, end_S_ID)
+  #rowSIDS = range(begin_S_ID, end_S_ID)
+
+  rowSIDS = range((matrixRowS -1) * width + 1, matrixRowS * width + 1):
+
   for id in rowSIDS:
     print '%s\t%s\tS' % (id, '\t'.join(output))
 
