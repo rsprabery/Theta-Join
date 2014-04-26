@@ -31,17 +31,17 @@ for line in sys.stdin:
 
   rowSIDS = range((matrixRowS -1) * width + 1, matrixRowS * width + 1)
 
-  for id in rowSIDS:
-    print '%s\t%s,S' % (id, ','.join(output))
+  for region_id in rowSIDS:
+    print '%s\t%s,S' % (region_id, ','.join(output))
 
   # T Part
   rows = range(1, height)
   matrix_column = random.randint(1, width)
   column_T_ids = []
   for row in rows:
-    id = ((row - 1) * width) + matrix_column
-    column_T_ids.append(id)
+    region_id = ((row - 1) * width) + matrix_column
+    column_T_ids.append(region_id)
 
-  for id in column_T_ids:
-    print '%s\t%s,T' % (id, ','.join(output))
+  for region_id in column_T_ids:
+    print '%s\t%s,T' % (region_id, ','.join(output))
 
