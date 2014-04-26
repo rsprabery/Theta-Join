@@ -12,9 +12,9 @@ for line in sys.stdin:
     #line = line.strip()
 
     # parse the input we got from mapper.py
-    id, ymdh, user_id, clicks, query_string, origin = line.split(',')
-    #id, value = line.split('\t')
-    #ymdh, user_id, clicks, query_string, origin = value.split(',')
+    #id, ymdh, user_id, clicks, query_string, origin = line.split(',')
+    id, value = line.split('\t')
+    ymdh, user_id, clicks, query_string, origin = value.split(',')
     x = "%s,%s,%s,%s" % (ymdh, user_id, clicks, query_string)
 
     if origin == 'S':

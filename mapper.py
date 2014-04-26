@@ -32,7 +32,7 @@ for line in sys.stdin:
   rowSIDS = range((matrixRowS -1) * width + 1, matrixRowS * width + 1)
 
   for id in rowSIDS:
-    print '%s,%s,S' % (id, ','.join(output))
+    print '%s\t%s,S' % (id, ','.join(output))
 
   # T Part
   rows = range(1, height)
@@ -43,5 +43,5 @@ for line in sys.stdin:
     column_T_ids.append(id)
 
   for id in column_T_ids:
-    print '%s,%s,T' % (id, ','.join(output))
+    print '%s\t%s,T' % (id, ','.join(output))
 
