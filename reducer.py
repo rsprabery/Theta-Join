@@ -30,7 +30,7 @@ for s in s_tupes:
     t_ymdh, t_user_id,  t_clicks, t_query_string = t.split(',')
     #print "CLICKS: %s, %s" % (s_clicks, t_clicks)
     if s_clicks == '1' and t_clicks == '1':
-    print "COUNT FOUND"
+      print "COUNT FOUND"
       if s_user_id != t_user_id:
         print "different ids found"
         s_sec = s_ymdh.split(' ')[1].split(':')[-1]
