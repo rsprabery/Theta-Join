@@ -5,7 +5,7 @@ import sys
 
 s_tupes = set()
 t_tupes = set()
-output = set()
+#output = set()
 
 # input comes from STDIN
 for line in sys.stdin:
@@ -34,10 +34,11 @@ for s in s_tupes:
         s_sec = s_ymdh.split(' ')[1].split(':')[-1]
         t_sec = t_ymdh.split(' ')[1].split(':')[-1]
         if abs(int(s_sec) - int(t_sec)) < 2:
-          output.add("%s,%s,%s" % (s_ymdh, s_query_string, t_query_string))
+          #output.add("%s,%s,%s" % (s_ymdh, s_query_string, t_query_string))
+          print "%s,%s,%s" % (s_ymdh, s_query_string, t_query_string)
 
-for x in output:
-  print x 
+#for x in output:
+  #print x 
 #print "s_tupes"
 #print s_tupes
 
