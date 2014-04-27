@@ -38,7 +38,7 @@ for line in sys.stdin:
       print '%s\t%s,S' % (region_id, ','.join(output))
 
     # T Part
-    rows = range(1, height)
+    rows = range(1, height + 1)
     matrix_column = random.randint(1, width)
     column_T_ids = []
     for row in rows:
