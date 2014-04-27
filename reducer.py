@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 from operator import itemgetter
-from datetime import datetime
+from datetime import datetime, timedelta
 import sys
 
 s_tupes = set()
@@ -39,7 +39,7 @@ for s in s_tupes:
         #s_sec = s_ymdh.split(' ')[1].split(':')[-1]
         #t_sec = t_ymdh.split(' ')[1].split(':')[-1]
         #if abs(int(s_sec) - int(t_sec)) < 2:
-        if  datetime.timedelta(seconds=-2) < s_time - t_time < datetime.timedelta(seconds=2):
+        if  timedelta(seconds=-2) < s_time - t_time < timedelta(seconds=2):
           #print "other found"
           #output.add("%s,%s,%s" % (s_ymdh, s_query_string, t_query_string))
           print "%s,%s,%s" % (s_ymdh, s_query_string, t_query_string)
