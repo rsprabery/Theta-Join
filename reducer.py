@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 
 from operator import itemgetter
+from datetime import datetime
 import sys
 
 s_tupes = set()
@@ -33,9 +34,12 @@ for s in s_tupes:
       #print "COUNT FOUND"
       if s_user_id != t_user_id:
         #print "different ids found"
-        s_sec = s_ymdh.split(' ')[1].split(':')[-1]
-        t_sec = t_ymdh.split(' ')[1].split(':')[-1]
-        if abs(int(s_sec) - int(t_sec)) < 2:
+        s_time = datetime.strptime(s_ymdh, '%Y-%m-%d %H:%M:%S')
+        t_time = datetime.strptime(t_ymdh, '%Y-%m-%d %H:%M:%S')
+        #s_sec = s_ymdh.split(' ')[1].split(':')[-1]
+        #t_sec = t_ymdh.split(' ')[1].split(':')[-1]
+        #if abs(int(s_sec) - int(t_sec)) < 2:
+        if  datetime.timedelta(seconds=-2) < s_time - t_time < datetime.timedelta(seconds=2):
           #print "other found"
           #output.add("%s,%s,%s" % (s_ymdh, s_query_string, t_query_string))
           print "%s,%s,%s" % (s_ymdh, s_query_string, t_query_string)
