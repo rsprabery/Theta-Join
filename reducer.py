@@ -3,6 +3,15 @@
 from operator import itemgetter
 from datetime import datetime, timedelta
 import sys
+import time
+
+if hasattr(datetime, 'strptime'):
+    #python 2.6
+    strptime = datetime.strptime
+else:
+    #python 2.4 equivalent
+    strptime = lambda date_string, format: datetime(*(time.strptime(date_string, format)[0:6]))
+    
 
 s_tupes = set()
 t_tupes = set()
@@ -39,13 +48,13 @@ for s in s_tupes:
         #s_sec = s_ymdh.split(' ')[1].split(':')[-1]
         #t_sec = t_ymdh.split(' ')[1].split(':')[-1]
         #if abs(int(s_sec) - int(t_sec)) < 2:
-        if  timedelta(seconds=-2) < s_time - t_time < timedelta(seconds=2):
+        if timedelta(seconds=-2) < s_time - t_time < timedelta(seconds=2):
           #print "other found"
           #output.add("%s,%s,%s" % (s_ymdh, s_query_string, t_query_string))
           print "%s,%s,%s" % (s_ymdh, s_query_string, t_query_string)
 
 #for x in output:
-  #print x 
+  #print x
 
 #print "s_tupes"
 #print s_tupes
